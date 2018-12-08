@@ -13,18 +13,48 @@
 	<div class="main">
 	  <h1> Kugelgleichungen </h1>
 
+
 	  <h2> Ursprungskreis </h2>
+      Ein Kreis ist die Menge aller Punkte die den Abstand vom Mittelpunkt haben. Die Länge eines Vektors vom Mittelpunkt bis zu einem Kreispunkt ist immer gleich. Es wird angenommen, dass der Radius 1 ist.
+      $$ \left| \vec{r} \right| = Radius = 1 $$
+      Die Länge eines Vectors kann ausgerechnet werden durch:
+      $$ \left| \vec{r} \right| = \sqrt{x^2 + y^2} $$
+      In dieser Grafik wird gezeigt, dass die Länge des Vectors bei allen Punkten der Kreisbahn gleich ist.
 	  <div id="UKreis"></div>
+      
 
 	  <h2> verschobener Kreis </h2>
+      Der Kreis kann auch um einen Verschiebungsvektor $ \vec{v} $ verschoben werden. Der Vektor $ \vec{x} $ ist ein beliebiger Vektor auf der Kreisbahn.
+      $$ \vec{x} = \vec{v} + \vec{r} $$
+      $$ \vec{r} = \vec{x} - \vec{v} $$
+      $$ \left| \vec{r} \right| = \left| \vec{x} - \vec{v} \right| $$
 	  <div id="Kreis"></div>
 
+
+      
 	  <h2> Ursprungskugel </h2>
+ 
+      Die Kugelgleichung kann leicht auf die dritte Dimension übertragen werden. Wieder ist die Länge des Radiusvektors immer gleich.
+      $$ \left| \vec{r} \right| = Radius = 1 $$
+      $$ Radius = \sqrt{x^2 + y^2 + z^2} $$
+      Alle drei x, y und z, die diese Gleichung erfüllen, bilden die Koordinaten für einen Kreispunkt.
 	  <div id="USphere"></div>
 
+      
 	  <h2> Kugel </h2>
-	  <div id="Sphere"></div>
+	  Die Kugel kann wie ein Kreis durch ein Verschiebungsvektor verschoben werden.
+      $$ \left| \vec{r} \right| =  \left| \vec{x} - \vec{v} \right| $$
+      $$ \sqrt{(x_x - v_x)^2 + (x_y - v_y)^2 + (x_z - v_z)^2} $$
+      <div id="Sphere"></div>
 	  
+      All die Gleichungen können etwas umformuliert werden:
+      $$ \sqrt{(x_x - v_x)^2 + (x_y - v_y)^2 + (x_z - v_z)^2} = r |()^2 $$
+      $$ r^2 = (x_x - v_x)^2 + (x_y - v_y)^2 + (x_z - v_z)^2 $$
+      $$ r^2 = (x_x - v_x)(x_x - v_x) + (x_y - v_y)(x_y - v_y) + (x_z - v_z)(x_z - v_z) $$
+      Mit der Methode des Scharfen Hinsehens kann man feststellen, dass auf der linken Seite nichts anderes steht als
+      $$ \colvec{x_x - v_x, x_y - v_y, x_z - v_z} \cdot \colvec{x_x - v_x, x_y - v_y, x_z - v_z} $$
+      $$ \colvec{}
+
 	  
 	  
 	</div>
