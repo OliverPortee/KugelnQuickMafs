@@ -27,9 +27,10 @@
 
 /* Main content */
 .main {
-    margin-top: 80px; /* Add a top margin to avoid content overlay */
-	margin-left: 300px;
-	maring-right: 300px;
+    margin-top: 80px;
+	margin-left: 400px;
+	margin-right: 400px;
+	margin-bottom: 300px;
 	font-size: x-large;
 }
 

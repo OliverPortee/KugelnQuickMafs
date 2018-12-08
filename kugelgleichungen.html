@@ -4,6 +4,10 @@
 	<meta charset="utf-8"/>
 	<title> Kugelgleichungen - Quick Mafs </title>
 	<link rel="stylesheet" href="styles.css">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?...">
+</script>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
   </head>
   <body>
 	<script src="navigation-bar.js"></script>
@@ -46,17 +50,20 @@
       $$ \left| \vec{r} \right| =  \left| \vec{x} - \vec{v} \right| $$
       $$ \sqrt{(x_x - v_x)^2 + (x_y - v_y)^2 + (x_z - v_z)^2} $$
       <div id="Sphere"></div>
-	  
+
+
+	  <h2> Eine andere Schreibweise </h2>
       All die Gleichungen können etwas umformuliert werden:
       $$ \sqrt{(x_x - v_x)^2 + (x_y - v_y)^2 + (x_z - v_z)^2} = r |()^2 $$
       $$ r^2 = (x_x - v_x)^2 + (x_y - v_y)^2 + (x_z - v_z)^2 $$
       $$ r^2 = (x_x - v_x)(x_x - v_x) + (x_y - v_y)(x_y - v_y) + (x_z - v_z)(x_z - v_z) $$
-      Mit der Methode des Scharfen Hinsehens kann man feststellen, dass auf der linken Seite nichts anderes steht als
-      $$ \colvec{x_x - v_x, x_y - v_y, x_z - v_z} \cdot \colvec{x_x - v_x, x_y - v_y, x_z - v_z} $$
-      $$ \colvec{}
-
-	  
-	  
+      Mit der Methode des „Scharfen Hinsehens” kann man feststellen, dass dort nichts anderes steht als
+      $$ r^2 = \begin{pmatrix}x_x - v_x \\ x_y - v_y \\ x_z - v_z\end{pmatrix} \cdot \begin{pmatrix}x_x - v_x \\ x_y - v_y \\ x_z - v_z\end{pmatrix} $$
+	  Das kann wiederum vereinfacht werden:
+	  $$ r^2 =  \begin{pmatrix}x_x - v_x \\ x_y - v_y \\ x_z - v_z\end{pmatrix}^2 $$
+	  $$ r^2 = \left( \vec{x} - \vec{v} \right)^2 $$
+	  Dies ist eine gängige Notation in Lehrbüchern und beschreibt ein Kreis in zwei Dimensionen und eine Kugel in drei Dimensionen (und eine Hyperkugel in vier Dimensionen :)
+	    
 	</div>
   </body>
  </html>
