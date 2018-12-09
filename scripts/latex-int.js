@@ -39,12 +39,12 @@
     //
     // Look for current script by searching for one with the right source
     //
-    var n = oldMathJax.length;
+    var n = newMathJax.length;
     var scripts = document.getElementsByTagName('script');
     for (var i = 0; i < scripts.length; i++) {
       var script = scripts[i];
       var src = (script.src || '').replace(/.*?:\/\//,'');
-      if (src.substr(0, n) === oldMathJax) {
+      if (src.substr(0, n) === newMathJax) {
         replaceScript(script, src);
         break;
       }

@@ -5,12 +5,82 @@
 	<meta charset="utf-8"/>
 	<title> Ebenen und Kugeln - Quick Mafs </title>
 	<link rel="stylesheet" href="styles.css">
+	<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
   </head>
   <body>
 	<script src="navigation-bar.js"></script>
+	<script type="text/javascript" src="scripts/geogebra-int.js"></script>
+	<script type="text/javascript" src="scripts/ebenen.js"></script>
+	
 	<div class="main">
 	  <h1> Ebenen und Kugeln </h1>
-	  2
+
+	  <h2> Lagebeziehungen? </h2>
+	  Als erstes werden ein Kreis und eine Gerade betrachtet. Wie sieht es mit den Schnittpunkten aus?
+	  <ul>
+		<li> 0 Schnittpunkte: <b> Passante </b>
+		<li> 1 Schnittpunkt: <b> Tangente </b>
+		<li> 2 Schnittpunkte: <b> Sekante </b>
+	  </ul>
+	  <p> Das lässt sich natürlich auch auf Kugeln und Ebenen übertragen, bloß dass man dann nicht mehr so locker von Passante, Tangente und Sekante sprechen kann, weil dann nicht klar ist, was gemeint ist. Der Begriff <b> Tangentialebene </b> ist verbreitet. Aber bei allem anderen sollte man vorsichtig sein. </p>
+	  Um die Lagebeziehung zwischen Kreis und Gerade herauszufinden, wird die Geradengleichung in die Kreisgleichung eingesetzt.
+	  $$ \text{Gerade:}\ \vec{x}=\vec{p}+t\cdot \vec{r} $$
+	  $$ \text{Kreis:}\ (\vec{x}-\vec{m})^2=r^2 $$
+	  $$ \text{Einsetzen:}\ (\vec{p}+t\cdot \vec{r}-\vec{m})^2=r^2 $$
+	  Kommt keine Lösung heraus, dann ist es eine Passante, bei einer Lösung eine Tangente, bei zwei eine Sekante und bei drei wurde irgendwas falsch gemacht. 
+	  
+
+	  <h2> Die Gleichung einer Tangente </h2>
+	  <p> Wie könnte eine Tangente an einem Kreis mathematisch ausgedrückt werden? Dafür muss zuerst verstanden werden, wie mathematische Gleichungen funktionieren. Will man über alle geraden Zahlen sprechen, so schreibt man $x=2n\ \text{mit}\ n \in \mathbb{N}$. Was man eigentlich meint, sind alle Lösungen der Gleichung. Will man die x-y-Ebene in der Normalenform ausdrücken, schreibt man $\vec{x}\cdot \begin{pmatrix}0 \\ 0 \\ 1 \end{pmatrix}=0$. Diesmal steht nirgends $\vec{x}=...\ $
+		Auch wenn keine konkrete Berechnungsformel für $\vec{x}$ angegeben wird wie z. B. bei der Vektorform, „erzählt” einem die Gleichung, was sie meint. Und das sind alle Vektoren, die diese Gleichung erfüllen, d. h. bei ihnen kommt eine wahre Aussage heraus. </p>
+	  <p> Das Prinzip lässt sich auf die Tangenten übertragen. Welche Bedingung müssen alle Punkte erfüllen, die auf der Tangente eines Kreisbogens liegen? Als erstes müssen der Kreisbogen und die Gerade einen Punkt gemeinsam haben. Diese Punkt hat den Ortsvektor $\vec{p}$ und liegt irgendwo auf der Kreisbahn. Außerdem muss die Tangente <b> genau </b> einen Punkt mit dem Kreis gemeinsam haben (schließlich ist das die Definition von Tangenten). Es ist mathematisch allerdings schwer bis unmöglich auszudrücken, wie viele Lösungen eine Gleichung haben soll. Es gibt aber noch eine andere Eigentschaft von Tangenten, die sehr nützlich ist: Eine Tangente steht immer senkrecht auf dem Radius des Kreises (der vom Mittelpunkt bis zum Berührpunkt geht). Das lässt sich leicht mit einem Skalarprodukt von null ausdrücken. Der Vektor $\vec{x}$ ist dabei irgendein Vektor, der die Gleichung erfüllen soll, wenn er auf der Tangente liegt. </p>
+	  In der nachfolgenden Grafik, kann gesehen werden, dass das Skalarprodukt $ (\vec{b}-\vec{m})\cdot (\vec{x}-\vec{b}) $ genau dann null wird, wenn die Gerade den Kreis berührt und nicht mehr schneidet. Mit dem Schieberegler kann der Winkel zwischen Gerade und Kreis verändert werden und mit einem Klick auf „Vektoren anzeigen” können nicht nur die Vektoren, sondern auch das Skalarprodukt sichtbar gemacht werden. Die Punkte M und B können beliebig verschoben werden. 
+
+	  <div id="kreisTangent"></div>
+
+	  <h2> Lagebeziehungen von Ebenen und Kugeln </h2>
+
+
+	  All das kann auf Ebenen und Kugeln übertragen werden:
+	  $$ (\vec{b}-\vec{m})\cdot (\vec{x}-\vec{b})=0  $$
+	  Bloß haben die Vektoren diesmal nun drei statt zwei Komponenten. 
+	  
+	  <div id="kugelTangent"></div>
+
+	  Es wurde schon beschrieben, wie man die Lagebeziehung zwischen Kreis und Gerade herausfinden kann. Das lässt sich auch für Kugeln und Ebenen anwenden. Aber es gibt noch eine weitere Methode: Es kann auch mit dem Abstand zwischen der Kugel und der Ebene gearbeitet werden.
+	  <ul>
+		<li> $d&gt;r$: Die Ebene hat keinen Punkt mit der Kugel gemeinsam. </li>
+		<li> $d=r$: Die Ebene ist eine Tangentialebene. </li>
+		<li> $d&lt;r$: Die Ebene schneidet die Kugel in einem Kreisbogen. </li>
+	  </ul>
+	  Dabei ist d der Abstand zwischen dem Kugelmittelpunkt und der Ebene.
+
+	  <p>
+		Doch wie kann man den Abstand herausfinden? Am besten funktioniert das mit der Hesseschen Normalform. Bei einer Ebene der Normalenform $E:\ (\vec{x}-\vec{p})\cdot \vec{n}$ und einer Kugel mit dem Mittelpunkt M ($\vec{m}=\vec{0M}$) beträgt der Abstand d:
+		$$ d=\frac{\left| (\vec{m}-\vec{p})\cdot \vec{n} \right|}{\left|\left| \vec{n}  \right|\right|} $$
+		oder
+		$$ d=\left| (\vec{m}-\vec{p})\cdot \vec{n_0} \right| $$.
+		
+	  </p>
+	  <p>
+		In der nachfolgenden Grafik kann das ausprobiert werden. Als erstes sollte mit dem Schieberegler die Sichtbarkeit der Kugel erhöht werden. Dann sollte der Schnittebene 1 sichtbar gemacht werden (erstes Kontrollkästchen). Mit dem Schieberegler für t kann nun die Ebene entlang der Geraden g verschoben werden. Wenn die Ebene durch die Kugel geht, kann die Schnittebene 2 gezeigt werden. Der Leser kann dann selbst herausfinden, was in den rechten beiden Fenstern gezeigt wird. 
+	  </p>
+	  
+
+	  
+	  <div id="kugelEbene"></div>
+
+	  <h2> Eine andere Schreibweise </h2>
+	  Die Gleichung $ (\vec{b}-\vec{m})\cdot (\vec{x}-\vec{b})=0 $ sieht eigentlich schon relativ gut aus. Allerdings gibt es ein Problem: Wenn man für $\vec{b}$ einen Vektor einsetzt, der als Ortsvektor nicht auf den Kreisbogen zeigt, kommt Quatsch raus. Außerdem wird gerade für das nächste Kapitel (Polarebenen) eine andere Gleichung gebraucht. Dafür wird die vorhandene Gleichung umgeformt:
+	  $$ \vec{x}-\vec{b} 
+
+	  
+	  
+	  
+	  
 	</div>
   </body>
  </html>
