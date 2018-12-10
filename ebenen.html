@@ -27,9 +27,9 @@
 	  </ul>
 	  <p> Das lässt sich natürlich auch auf Kugeln und Ebenen übertragen, bloß dass man dann nicht mehr so locker von Passante, Tangente und Sekante sprechen kann, weil dann nicht klar ist, was gemeint ist. Der Begriff <b> Tangentialebene </b> ist verbreitet. Aber bei allem anderen sollte man vorsichtig sein. </p>
 	  Um die Lagebeziehung zwischen Kreis und Gerade herauszufinden, wird die Geradengleichung in die Kreisgleichung eingesetzt.
-	  $$ \text{Gerade:}\ \vec{x}=\vec{p}+t\cdot \vec{r} $$
+	  $$ \text{Gerade:}\ \vec{x}=\vec{p}+t\cdot \vec{v} $$
 	  $$ \text{Kreis:}\ (\vec{x}-\vec{m})^2=r^2 $$
-	  $$ \text{Einsetzen:}\ (\vec{p}+t\cdot \vec{r}-\vec{m})^2=r^2 $$
+	  $$ \text{Einsetzen:}\ (\vec{p}+t\cdot \vec{v}-\vec{m})^2=r^2 $$
 	  Kommt keine Lösung heraus, dann ist es eine Passante, bei einer Lösung eine Tangente, bei zwei eine Sekante und bei drei wurde irgendwas falsch gemacht. 
 	  
 
@@ -39,7 +39,7 @@
 	  <p> Das Prinzip lässt sich auf die Tangenten übertragen. Welche Bedingung müssen alle Punkte erfüllen, die auf der Tangente eines Kreisbogens liegen? Als erstes müssen der Kreisbogen und die Gerade einen Punkt gemeinsam haben. Diese Punkt hat den Ortsvektor $\vec{p}$ und liegt irgendwo auf der Kreisbahn. Außerdem muss die Tangente <b> genau </b> einen Punkt mit dem Kreis gemeinsam haben (schließlich ist das die Definition von Tangenten). Es ist mathematisch allerdings schwer bis unmöglich auszudrücken, wie viele Lösungen eine Gleichung haben soll. Es gibt aber noch eine andere Eigentschaft von Tangenten, die sehr nützlich ist: Eine Tangente steht immer senkrecht auf dem Radius des Kreises (der vom Mittelpunkt bis zum Berührpunkt geht). Das lässt sich leicht mit einem Skalarprodukt von null ausdrücken. Der Vektor $\vec{x}$ ist dabei irgendein Vektor, der die Gleichung erfüllen soll, wenn er auf der Tangente liegt. </p>
 	  In der nachfolgenden Grafik, kann gesehen werden, dass das Skalarprodukt $ (\vec{b}-\vec{m})\cdot (\vec{x}-\vec{b}) $ genau dann null wird, wenn die Gerade den Kreis berührt und nicht mehr schneidet. Mit dem Schieberegler kann der Winkel zwischen Gerade und Kreis verändert werden und mit einem Klick auf „Vektoren anzeigen” können nicht nur die Vektoren, sondern auch das Skalarprodukt sichtbar gemacht werden. Die Punkte M und B können beliebig verschoben werden. 
 
-	  <div id="kreisTangent"></div>
+	  <div id="kreisTangent" class="ggb"></div>
 
 	  <h2> Lagebeziehungen von Ebenen und Kugeln </h2>
 
@@ -48,7 +48,7 @@
 	  $$ (\vec{b}-\vec{m})\cdot (\vec{x}-\vec{b})=0  $$
 	  Bloß haben die Vektoren diesmal nun drei statt zwei Komponenten. 
 	  
-	  <div id="kugelTangent"></div>
+	  <div id="kugelTangent" class="ggb"></div>
 
 	  Es wurde schon beschrieben, wie man die Lagebeziehung zwischen Kreis und Gerade herausfinden kann. Das lässt sich auch für Kugeln und Ebenen anwenden. Aber es gibt noch eine weitere Methode: Es kann auch mit dem Abstand zwischen der Kugel und der Ebene gearbeitet werden.
 	  <ul>
@@ -71,15 +71,26 @@
 	  
 
 	  
-	  <div id="kugelEbene"></div>
+	  <div id="kugelEbene" class="ggb"></div>
 
 	  <h2> Eine andere Schreibweise </h2>
-	  Die Gleichung $ (\vec{b}-\vec{m})\cdot (\vec{x}-\vec{b})=0 $ sieht eigentlich schon relativ gut aus. Allerdings gibt es ein Problem: Wenn man für $\vec{b}$ einen Vektor einsetzt, der als Ortsvektor nicht auf den Kreisbogen zeigt, kommt Quatsch raus. Außerdem wird gerade für das nächste Kapitel (Polarebenen) eine andere Gleichung gebraucht. Dafür wird die vorhandene Gleichung umgeformt:
-	  $$ \vec{x}-\vec{b} 
-
-	  
-	  
-	  
+	  Die Gleichung $ (\vec{x}-\vec{b})\cdot (\vec{b}-\vec{m})=0 $ sieht eigentlich schon relativ gut aus. Allerdings gibt es ein Problem: Wenn man für $\vec{b}$ einen Vektor einsetzt, der als Ortsvektor nicht auf den Kreisbogen zeigt, kommt Quatsch raus. Außerdem wird gerade für das <a href="polar.html">nächste Kapitel</a> eine andere Gleichung gebraucht. Dafür wird die vorhandene Gleichung umgeformt:
+	  $$ \begin{array}{rl}
+	    \vec{x}-\vec{b}                                                                               \qquad & |\ -\vec{m} \\
+	    \vec{x}-\vec{b}=(\vec{x}-\vec{m})-(\vec{b}-\vec{m})                                           \qquad & |\ \text{einsetzen} \\
+	    \left[(\vec{x}-\vec{m})-(\vec{b}-\vec{m}) \right]\cdot (\vec{b} - \vec{m}) = 0                \qquad & |\ \text{auflösen} \\
+	    (\vec{x}-\vec{m})\cdot(\vec{b}-\vec{m})-(\vec{b}-\vec{m})\cdot(\vec{b}-\vec{m})=0             \qquad & |\ +(\vec{b}-\vec{m})\cdot(\vec{b}-\vec{m}) \\
+	    (\vec{x}-\vec{m})\cdot(\vec{b}-\vec{m})=(\vec{b}-\vec{m})^2                                   \qquad &  \\
+	  \end{array}
+	  $$
+	  Wie schon auf der Seite über Kugelgleichungen gezeigt, kann man dafür auch schreiben:
+	  $$ (r)^2 = (\vec{x}-\vec{m})\cdot(\vec{b}-\vec{m}) $$
+	  Diese Form macht nun einen besseren Job - aus drei Gründen:
+	  <ul>
+		<li> sie sieht optisch schöner aus, weil $\vec{b}$ nur einmal auftaucht </li>
+		<li> sie ähnelt eher der Kugelgleichung </li>
+		<li> man kann nun für $\vec{b} $ auch Vektoren einsetzen, deren Punkte nicht auf der Kreisbahn liegen (dies wird im <a href="polar.html">nächsten Kapitel</a> untersucht) </li>
+	  </ul>
 	  
 	</div>
   </body>
