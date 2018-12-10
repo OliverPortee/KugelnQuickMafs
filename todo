@@ -2,11 +2,14 @@
 
 - ebenen.html kugel und tangente funktioniert nicht richtig, weil man B verschieben kann.
 - in ebenen.html: kugel und ebenen mit Schnitt t: schreibe d>r d=r oder d<r; außerdem: nicht transparenz sondern sichtbarkeit; sichtbarkeit auf mehr als 0% und t unter sichtbarkeit
+- ebenen.html kein r vec in geradengleichung
 - füge links zur jeweils nächsten seite ein 
 - füge <p> tags ein
 - erkären, wie die Gleichung (c-m)*(b-m)=r^2 zustande kommt (tangenten)
 - polargeraden und polarebenen
-
+- abstände ziwschen ggb und text
+- main div dynamic
+- ggb centern
 
 
 * Ideen
