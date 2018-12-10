@@ -1,14 +1,11 @@
 * ToDo
-
 - ebenen.html kugel und tangente funktioniert nicht richtig, weil man B verschieben kann.
 - in ebenen.html: kugel und ebenen mit Schnitt t: schreibe d>r d=r oder d<r; außerdem: nicht transparenz sondern sichtbarkeit; sichtbarkeit auf mehr als 0% und t unter sichtbarkeit
-- füge links zur jeweils nächsten seite ein 
-- polargeraden und polarebenen
-- Beispielaufgabe auf jeder Seite 
 
 
 
 * Ideen
-- 2d und 3d gegenüberstellen 
 - wichtiges in Box markieren
-
+- parametrische/koordinaten - gleichung für kreis und kugel
+- Links zu wikipedia, ...
+- Beispielaufgabe auf jeder Seite 

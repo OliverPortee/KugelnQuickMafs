@@ -4,12 +4,60 @@
 	<meta charset="utf-8"/>
 	<title> Kegel und Polarebenen - Quick Mafs </title>
 	<link rel="stylesheet" href="styles.css">
+	<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+ 
   </head>
   <body>
 	<script src="navigation-bar.js"></script>
+	<script type="text/javascript" src="scripts/geogebra-int.js"></script>
+	<script type="text/javascript" src="scripts/polar.js"></script>
+	
 	<div class="main">
 	  <h1> Kegel und Polarebenen </h1>
-	  3
+
+	  <h2> Kreispolare </h2>
+
+	  <p> Liegt ein Punkt P außerhalb eines Kreises, gehen von ihm genau zwei Strahlen aus, die den Kreis berühren. Es sind Tangenten in den Punkten $B_1$ und $B_2$. Die Gerade, die durch diese beiden Punkte geht, wird <b>Polare</b> zum Punkt P genannt. Dieser Punkt ist der <b>Pol</b>. </p>
+	  <p> Im letzten Kapitel (<a href="ebenen.html">Ebenen</a>) wurde schon eine nette Gleichung für Tangenten hergeleitet:
+		$$ r^2 = (\vec{p}-\vec{m})\cdot(\vec{b_1}-\vec{m}) $$
+		Statt $\vec{x}$ wurde $\vec{p}$ eingesetzt, weil der Punkt P auf der Tangenten liegt. </p>
+	  <p>
+		Aufgrund des rechten Winkels zwischen der Polaren und der Geraden auf P und M kann eine weitere Gleichung formuliert werden.
+		$$ 0 = (\vec{x}-\vec{b_1})\cdot (\vec{p}-\vec{m}) $$
+		$\vec{x}$ ist hier der Ortsvektor eines Punktes, der auf der Polaren liegt. 
+		Lasst uns die Gleichungen mal addieren, just for fun.
+		$$ \begin{array}{rl}
+		r^2 = (\vec{p}-\vec{m})\cdot(\vec{b_1}-\vec{m}) + (\vec{x}-\vec{b_1})\cdot (\vec{p}-\vec{m})      \qquad & |\ (\vec{p} - \vec{m})\ \text{ausklammern} \\
+		r^2 = (\vec{p}-\vec{m})\cdot\left[(\vec{b_1}-\vec{m}) + (\vec{x}-\vec{b_1})\right]                \qquad & |\ \text{zusammenfassen} \\
+		r^2 = (\vec{p}-\vec{m})\cdot(\vec{x} - \vec{m})                                                   \qquad & |\ \text{there we go!}  
+		\end{array} $$
+		Eigentlich ist das genau die gleiche Gleichung wie die Gleichung vom letzten Kapitel, bloß dass dort statt dem $\vec{b}$ nun ein $\vec{p}$ steht. Dadurch wird symbolisiert, dass man nun nicht mehr einen Ortsvektor von einem Punkt auf dem Kreisbogen einsetzen muss, sondern einen beliebigen.
+	  </p>
+	  <div id="kreisPolare" class="ggb"></div>
+	  <p>
+		Nun ist die Frage, was diese Gleichung eigentlich ausdrückt. Sie beschreibt die Polare, denn beim Einsetzen von irgendeinem Ortsvektor (in $\vec{x}$), dessen Punkt auf der Polaren liegt, kommt eine wahre Aussage heraus. Es ist interessant, sich vorzustellen, was passiert, wenn man den Punkt P (entspricht dem Ortsvektor $\vec{p}$) anfässt und langsam Richtung Kreisbogen schiebt: Der Winkel zwischen den beiden Tangenten wird größer, die Polare kommt auf den Punkt zu. Schiebt man den Punkt auf den Kreisbogen, erreicht die Polare ebendiesen Punkt und wird selbst zur Tangenten im Punkt P. 
+	  </p> 
+
+
+	  <h2> ... und nun in 3d </h2>
+	  
+	  Wie vielleicht bereits erwartet, bleibt die Gleichung für den Raum genau gleich.
+	  $$ r^2 = (\vec{p}-\vec{m})\cdot(\vec{x} - \vec{m}) $$
+	  Hier nochmal die Varaiblen mit ihrer Bedeutung:
+	  <ul>
+		<li> $r$ - Radius </li>
+		<li> $\vec{p}$ - Ortsvektor des Pols </li>
+		<li> $\vec{m}$ - Ortsvektor des Kugelmittelpunkts (wohin ist die Kugel verschoben?) </li>
+		<li> $\vec{x}$ - Ortsvektor eines beliebigen Punktes auf der Polaren </li>
+	  </ul>
+
+	  Bloß - was kommt nun aus der Gleichung heraus? Weil die Vektoren nun drei Komponenten haben, ergibt sich eine andere Lösungsmenge für $\vec{x}$: Jetzt wird eine Ebene statt einer Geraden beschrieben. Diese Ebene wird Polarebene genannt. Stellt man sich alle Tangenten der Strahlen von P an der Kugel vor, so verläuft die Ebene durch alle Berührpunkte dieser Tangenten an der Kugel. Alle Berührpunkte zusammen bilden einen Kreis, den Schnittkreis. Alle Tangenten zusammen bilden eine Ebene, genauer gesagt einen Kegel mit der Spitze im Pol. So sieht das aus:
+
+	  <div id="kugelPolare" class="ggb"></div> 
+
+	  Zum Schluss kommt noch ein <a href="fazit.html">Fazit</a>.
+	  
 	</div>
   </body>
  </html>
