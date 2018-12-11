@@ -18,14 +18,14 @@
 	<div class="main">
 	  <h1> Ebenen und Kugeln </h1>
 
-	  <h2> Lagebeziehungen? </h2>
+	  <h2> Lagebeziehungen in 2d? </h2>
 	  Als erstes werden ein Kreis und eine Gerade betrachtet. Wie sieht es mit den Schnittpunkten aus?
 	  <ul>
 		<li> 0 Schnittpunkte: <b> Passante </b>
 		<li> 1 Schnittpunkt: <b> Tangente </b>
 		<li> 2 Schnittpunkte: <b> Sekante </b>
 	  </ul>
-	  <p> Das lässt sich natürlich auch auf Kugeln und Ebenen übertragen, bloß dass man dann nicht mehr so locker von Passante, Tangente und Sekante sprechen kann, weil dann nicht klar ist, was gemeint ist. Der Begriff <b> Tangentialebene </b> ist verbreitet. Aber bei allem anderen sollte man vorsichtig sein. </p>
+
 	  Um die Lagebeziehung zwischen Kreis und Gerade herauszufinden, wird die Geradengleichung in die Kreisgleichung eingesetzt.
 	  $$ \text{Gerade:}\ \vec{x}=\vec{p}+t\cdot \vec{v} $$
 	  $$ \text{Kreis:}\ (\vec{x}-\vec{m})^2=r^2 $$
@@ -42,9 +42,10 @@
 	  <div id="kreisTangent" class="ggb"></div>
 
 	  <h2> Lagebeziehungen von Ebenen und Kugeln </h2>
+	  <p> All das lässt sich natürlich auch auf Kugeln und Ebenen übertragen, bloß dass man dann nicht mehr so locker von Passante, Tangente und Sekante sprechen kann, weil dann nicht klar ist, was gemeint ist. Der Begriff <b> Tangentialebene </b> ist verbreitet. Aber bei allem anderen sollte man vorsichtig sein. Außerdem spricht man bei Ebenen nicht mehr von Schnittpunkten. Eine Tangentialebene berührt die Kugel in einem Punkt und eine Sekanten ähnliche Ebene (Schnittebene) schneidet die Kugel in einem Kreis. </p>
 
+	  Die Gleichung der Tangentialebene ist die gleiche wie die Tangentengleichung beim Kreis.
 
-	  All das kann auf Ebenen und Kugeln übertragen werden:
 	  $$ (\vec{b}-\vec{m})\cdot (\vec{x}-\vec{b})=0  $$
 	  Bloß haben die Vektoren diesmal nun drei statt zwei Komponenten. 
 	  
@@ -84,7 +85,7 @@
 	  \end{array}
 	  $$
 	  Wie schon auf der Seite über Kugelgleichungen gezeigt, kann man dafür auch schreiben:
-	  $$ (r)^2 = (\vec{x}-\vec{m})\cdot(\vec{b}-\vec{m}) $$
+	  $$ r^2 = (\vec{x}-\vec{m})\cdot(\vec{b}-\vec{m}) $$
 	  Diese Form macht nun einen besseren Job - aus drei Gründen:
 	  <ul>
 		<li> sie sieht optisch schöner aus, weil $\vec{b}$ nur einmal auftaucht </li>
@@ -95,7 +96,7 @@
 
 	  <h2> Was kann man noch machen? </h2>
 	  <p> In der letzten Grafik sind rechts zwei weitere Fenster enthalten. Das obere ist eine Darstellung (Projektion) der Schnittebene 1 in 2d. Es wurde ein Koordinatensystem in die Ebene gelegt und Objekte des Raumes, die in dieser Ebene liegen, werden auch rechts dargestellt. Wenn $-0,58&lt;t&lt;0,58$, dann wird der orangene Schnittkreis zwischen der Ebene und der Kugel dargestellt. Der Mittelpunkt ist P und gehört zur „Verschiebungsgeraden” der Ebene. Der Punkt A liegt auf der Kugel und $r'$ ist der Radius des Schnittkreises. </p>
-	  <p> Im unteres Fenster ist die Schnittebene 2 mit eigenem Koordinatensystem in 2d dargestellt. Die waagerechte, schwarze Gerade ist die Schnittgerade mit Schnittebene 1. Es lässt sich erkennen, dass der Winkel zwischen d und r' immer ein rechter ist. Daher lässt sich der Satz des Pythagoras anwenden, um z. B. den Radius der Kugel auszurechnen. </p>																																					
+	  <p> Im unteren Fenster ist die Schnittebene 2 mit eigenem Koordinatensystem in 2d dargestellt. Die waagerechte, schwarze Gerade ist die Schnittgerade mit Schnittebene 1. Es lässt sich erkennen, dass der Winkel zwischen d und r' immer ein rechter ist. Daher lässt sich der Satz des Pythagoras anwenden, um z. B. den Radius der Kugel auszurechnen. </p>																																					
 	</div>
   </body>
  </html>

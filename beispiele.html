@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8"/>
+	<title> Fazit  - Quick Mafs </title>
+	<link rel="stylesheet" href="styles.css">
+	<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+
+  </head>
+  <body>
+	<script src="navigation-bar.js"></script>
+	<script type="text/javascript" src="scripts/geogebra-int.js"></script>
+	<script type="text/javascript" src="scripts/beispiele.js"></script>
+
+	<div class="main">
+	  <h1> Beispiel </h1>
+	  <h2> Kugelgleichung (Lb. Lambacher Schweizer S. 322 Nr. 12) </h2>
+	  <b>Gegeben sind die Punkte $A(-8|5|7)$ und $B(-12|8|10)$. Betrachtet werden die Kugeln, deren Mittelpunkte auf der Geraden durch A und B liegen.</b>
+	  <p>Hier eine Grafik zum Ausprobieren:</p> 
+	  <div id="beispiel1" class="ggb"></div> 
+	  <p><b>a) Bestimmen sie die Gleichungen dieser Kugeln. </b></p> 
+	  Als erstes wird die Gerade durch A und B bestimmt:
+	  $$ g: \vec{x} = \vec{0A} + t\cdot (\vec{0A} - \vec{0B}) $$
+	  $$ g: \vec{x} = \begin{pmatrix} -8 \\ 5 \\ 7 \end{pmatrix} + t \cdot \begin{pmatrix} -8+12 \\ 5 - 8 \\ 7 - 10 \end{pmatrix} $$
+	  $$ g: \vec{x} = \begin{pmatrix} -8 \\ 5 \\ 7 \end{pmatrix} + t \cdot \begin{pmatrix} 4 \\ -3 \\ -3 \end{pmatrix} $$
+	  Über den Radius wurde in der Aufgabenstellung keine Aussage getroffen, also muss eine Variable eingesetzt werden. Der Vektor $\vec{x}$ stellt den Kugelmittelpunkt dar und wird deswegen in die Kugelgleichung für $\vec{m}$ eingesetzt.
+	  $$ (\vec{x}-\vec{m})^2=r^2 = \left[ \vec{x}-\left( \begin{pmatrix} -8 \\ 5 \\ 7 \end{pmatrix} + t \cdot \begin{pmatrix} 4 \\ -3 \\ -3 \end{pmatrix}\right) \right] ^2 $$
+	  Dies kann noch etwas vereinfacht werden.
+	  $$ r^2 = \left( \vec{x}-\begin{pmatrix} -8 \\ 5 \\ 7 \end{pmatrix} - t \cdot \begin{pmatrix} 4 \\ -3 \\ -3 \end{pmatrix}\right) ^2 $$
+
+	  <p><b> b) Bestimmen Sie die Mittelpunkte der Kugeln mit dem Radius 6, die Ursprung berühren.</b></p>
+	  In die Gleichung wird für den Radius 6 eingesetzt.
+	  $$ 6^2 = 36 = \left( \vec{x}-\begin{pmatrix} -8 \\ 5 \\ 7 \end{pmatrix} - t \cdot \begin{pmatrix} 4 \\ -3 \\ -3 \end{pmatrix}\right) ^2 $$
+	  Der Ortsvektor des Ursprungs ist der Nullvektor. Dieser wird in die Gleichung für $\vec{x}$ eingesetzt, um dann $t$ ausrechnen zu können.
+	  $$ 36 = \left( \begin{pmatrix}0 \\ 0 \\ 0\end{pmatrix}-\begin{pmatrix} -8 \\ 5 \\ 7 \end{pmatrix} - t \cdot \begin{pmatrix} 4 \\ -3 \\ -3 \end{pmatrix}\right) ^2 $$
+	  $$ 36 = \left( -\begin{pmatrix} -8 \\ 5 \\ 7 \end{pmatrix} - t \cdot \begin{pmatrix} 4 \\ -3 \\ -3 \end{pmatrix}\right) ^2 $$
+	  $$ 36 = \begin{pmatrix} 8-t\cdot 4 \\ -5+t\cdot 3 \\ -7+t\cdot 3 \end{pmatrix} ^2 $$
+	  $$ 36 = (8-t\cdot 4)(8-t\cdot 4) + (-5+t\cdot 3)(-5+t\cdot 3) + (-7+t\cdot 3)(-7+t\cdot 3) $$
+	  $$ 36 = (64-64\cdot t+16\cdot t^2) + (25-30\cdot t+9\cdot t^2) + (49-42\cdot t + 9\cdot t^2) $$
+	  $$ 0 = (16 + 9 + 9)\cdot t^2 + (-64-30-42)\cdot t + 64 + 25 + 49 - 36 $$
+	  $$ 0 = 34\cdot t^2 -136 \cdot t + 102 $$
+	  $$ 0 = t^2 - 4\cdot t + 3 $$
+	  p-q-Formeln:
+	  $$ t_{1,2}=-\frac{-4}{2}\pm \sqrt{\left(\frac{-4}{2}  \right)^2 - 3}= 2\pm \sqrt{4-3}$$
+	  $$ t_1 = 3 $$
+	  $$ t_2 = 1 $$
+	  Nun werden die beiden Mittelpunkte $M_1$ und $M_2$ ausgerechnet, indem die Werte für $t$ in die Geradengleichung eingesetzt werden.
+	  $$ M_1:\qquad \vec{x} = \begin{pmatrix} -8 \\ 5 \\ 7 \end{pmatrix} + 3 \cdot \begin{pmatrix} 4 \\ -3 \\ -3 \end{pmatrix} $$
+	  $$ M_1:\qquad \vec{x} = \begin{pmatrix} -8 + 12 \\ 5 - 9 \\ 7 - 9 \end{pmatrix} =  \begin{pmatrix} 4 \\ -4 \\ -2 \end{pmatrix} $$
+	  $$ M_2:\qquad \vec{x} = \begin{pmatrix} -8 \\ 5 \\ 7 \end{pmatrix} + 1 \cdot \begin{pmatrix} 4 \\ -3 \\ -3 \end{pmatrix} $$
+	  $$ M_2:\qquad \vec{x} = \begin{pmatrix} -8 + 4 \\ 5 - 3 \\ 7 - 3 \end{pmatrix} = \begin{pmatrix} -4 \\ 2\\ 4 \end{pmatrix} $$
+	  Damit lauten die Punkte: $M_1(4, -4, -2)$ und $M_2(-4, 2, 4)$. Dieses Ergebnis stimmt mit dem von der Grafik überein. 
+
+	  <p><b> c) Zeigen Sie, dass sich die beiden Kugeln aus b) schneiden.</b></p>
+	  <p>Man könnte, wie z. B. von Geradengleichungen gewohnt, versuchen wollen, $\vec{x}$-Vektoren gleichzusetzen oder einzusetzen. Diese Methode wäre zwar möglich, ist aber sehr, sehr umständlich. Daher wird ein einfacherer Weg eingeschlagen: Man bestimmt den Abstand $d$ der beiden Mittelpunkte und vergleicht ihn mit der Summe der beiden Radien.</p>
+	  <p>Der Abstand ist die Länge des Vektors zwischen $M_1$ und $M_2$. 
+	  $$ d=\vec{M_1M_2} = \left| \vec{0M_1} - \vec{0M_2} \right| = \left| \begin{pmatrix}4\\-4\\-2\end{pmatrix} - \begin{pmatrix}-4\\2\\4\end{pmatrix}\right| = \left| \begin{pmatrix}8\\-6\\-6\end{pmatrix}\right| $$
+	  $$ d=\sqrt{(8)^2 + (-6)^2 + (-6)^2} = \sqrt{64+36+36} = \sqrt{136} = 2\cdot \sqrt{34} $$
+		Damit ergibt sich ein Abstand von ungefähr $11,7$ Längeneinheiten. </p>
+	  Als nächstes wird die Summe der Radien ausgerechnet.
+	  $$ r_{gesamt} = r_1 + r_2 $$
+	  $$ r_1=r_2=6 $$ 
+	  $$ r_{gesamt} = 6 + 6 = 12 $$
+	  Jetzt können $r_{gesamt}$ und $d$ verglichen werden.
+	  $$ r_{gesamt} &gt; d $$
+	  Weil $d$ der Abstand (kürzeste Linie) zwischen $M_1$ und $M_2$ ist, und $r_{gesamt}$ der kleinste Abstand ist, ab dem sich die Kugeln gerade nicht mehr schneiden, müssen sich die Kugeln schneiden. Es ergibt sich ein Schnittkreis.
+
+	  <p><b> d) Als Zusatzaufgabe soll der Schnittkreis angegeben werden. </b></p>
+	  
+	  
+
+	</div>
+  </body>
+</html>
